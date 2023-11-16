@@ -1,0 +1,10 @@
+html::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #FF3CAC;
+    background: rgb(230,151,186);
+    background: radial-gradient(circle, rgba(230,151,186,1) 16%, rgba(231,147,184,1) 22%, rgba(166,141,195,1) 56%, rgba(163,128,201,1) 62%, rgba(80,40,119,1) 100%);
+    z-index: -1;
+}
