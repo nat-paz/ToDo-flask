@@ -43,16 +43,16 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form class="form-js">
                     <div class="mb-3">
                         <label for="exampleInputNome" class="form-label">Descrição:</label>
-                        <input type="text" class="form-control" id="exampleInputNome" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" id="tarefaN" aria-describedby="emailHelp">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
+                      <button type="submit" class="btn btn-primary">Adicionar</button>
                     </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
-              <button type="button" class="btn btn-primary">Adicionar</button>
             </div>
           </div>
         </div>
@@ -64,15 +64,17 @@
                 <h5 class="modal-title">Excluir Tarefas</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                    <div class="mb-3">
-                        <p>Tem certeza que deseja excluir?</p>
-                    </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-              <button type="button" class="btn btn-primary">Sim</button>
-            </div>
+            <form class="formExc-js">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <p>Tem certeza que deseja excluir?</p>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                <button type="submit" class="btn btn-primary" id="btnS">Sim</button>
+              </div>
+            </form>
           </div>
         </div>
     </div>
@@ -89,11 +91,11 @@
                         <label for="exampleInputNome" class="form-label">Descrição da Nova Tarefa:</label>
                         <input type="text" class="form-control" id="exampleInputNome" aria-describedby="emailHelp">
                     </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
+                      <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Descartar</button>
-              <button type="button" class="btn btn-primary">Salvar</button>
             </div>
           </div>
         </div>
