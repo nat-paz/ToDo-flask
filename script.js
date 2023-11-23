@@ -1,6 +1,5 @@
 const tabela = document.querySelector(".tabela-js");
 const from = document.querySelector(".form-js")
-const formUP = document.querySelector(".formUpdate-js")
 
 axios.get('http://127.0.0.1:5000/list').then((response) => {
         getData(response.data);
@@ -18,7 +17,7 @@ axios.get('http://127.0.0.1:5000/list').then((response) => {
                 <td>${item.TAREFA}</td>
                 <td><span class="material-symbols-outlined text-danger" type="button" data-bs-toggle="modal" data-bs-target="#modalDel" onclick="excluir(${item.ID})">
                 delete
-                </span><span class="material-symbols-outlined text-success" type="button" data-bs-toggle="modal" data-bs-target="#modalEdit" onclick="update(${item.TAREFA})">
+                </span><span class="material-symbols-outlined text-success" type="button" data-bs-toggle="modal" data-bs-target="#modalEdit" onclick="update('${item.TAREFA}')">
                 edit
                 </span></td>
             </tr>
@@ -69,27 +68,22 @@ axios.get('http://127.0.0.1:5000/list').then((response) => {
     }
 
     function update(tarefa_antiga) {
-
         const btn = document.getElementById("salvar");
-
+    
         btn.addEventListener("click", function () {
+            const tarefa_nova = document.getElementById("tarefaUP").value;
+    
+            if (tarefaUP.trim() !== "") {
 
-            const tarefaUP = document.getElementById("tarefaUP").value;
-
-            if(tarefaUP.trim() !== ""){
                 
-        
-                const tarefa_nova = {
-                    tarefa_nova: tarefaUP,
-                };
-            
-                axios.put('http://127.0.0.1:5000/update/${tarefa_antiga}/${tarefa_nova}',)
+    
+                axios.put(`http://127.0.0.1:5000/update/${tarefa_antiga}/${tarefa_nova}`)
                     .then(response => {
                         console.log('Resposta do servidor:', response.data.Tarefa);
                     })
                     .catch(error => {
                         console.error('Erro na requisição:', error);
                     });
-                }
-            })
-        }        
+            }
+        });
+    }
