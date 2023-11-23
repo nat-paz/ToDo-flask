@@ -73,9 +73,7 @@ axios.get('http://127.0.0.1:5000/list').then((response) => {
         btn.addEventListener("click", function () {
             const tarefa_nova = document.getElementById("tarefaUP").value;
     
-            if (tarefaUP.trim() !== "") {
-
-                
+            if (tarefa_nova.trim() !== "") {
     
                 axios.put(`http://127.0.0.1:5000/update/${tarefa_antiga}/${tarefa_nova}`)
                     .then(response => {
